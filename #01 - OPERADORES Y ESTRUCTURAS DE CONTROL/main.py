@@ -88,5 +88,12 @@ print("")
 
 # Operadores de Pertenencia
 print("OPERADORES DE PERTENCIA")
+my_list = [1, 10, 4, 5, 100]
+print(my_list, "\n")
+element = 2
+print(f'¿{element} esta en la lista? RTA->{element in my_list}')
+print(f'¿{element} no esta en la lista? RTA->{element not in my_list} \n')
 
+print(f'¿{element} es {my_list[element]}? RTA->{element is my_list[element]}')
+print(f'¿{element} no es {my_list[element]}? RTA->{element is not my_list[element]}')
 
