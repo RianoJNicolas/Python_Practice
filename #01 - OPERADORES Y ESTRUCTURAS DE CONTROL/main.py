@@ -35,27 +35,36 @@ print("")
 
 # Operadores de Asignacion
 print("OPERADORES DE ASIGNACION")
-asignar = 1
-print(f'a la variable **asignar** le asigne el valor de {asignar}')
-print("")
-print("CONTADOR DE SUMA (a += 1), SUMANDO + 1")
-while(a<5):
-    a += 1
-    print(f'contador +1 iniciando en 1, el resultado es {a}')
-print("")
-print("CONTADOR DE RESTA (a -= 1), RESTANDO -1")
-while(b>-5):
-    b -= 1
-    print(f'contador -1 iniciando en {-2}, el resultado es {b}')
-print("")
-print(
-    """
-    Tambien existen los contadores de tipo 
-    (a *= 1), (a /= 1), (a %= 1) y (a **= 1),
-    Teniendo en cuenta que el numero 1 se puede
-    reemplazar por cualquier numero o por otra variable.
-    """)
-print("")
+print("""
+Asignación""")
+x = 2
+print(f'A la variable *x* le asiganmos el valor {x}, con la siguiente sintaxis x = 1 \n')
+
+print("CONTADOR DE SUMA")
+x += 1
+print(f'La operacion (x += 1), es equivalente x = x + 1, que da como resultado {x} \n')
+
+print("CONTADOR DE RESTA")
+x -= 2
+print(f'La operacion (x -= 2), es equivalente x = x - 2, que da como resultado {x} \n')
+
+print("CONTADOR DE PRODUCTO")
+x *=5
+print(f'La operacion (x *= 5), es equivalente x = x * 5, que da como resultado {x} \n')
+
+print("CONTADOR DE DIVISION")
+x /= 5
+print(f'La operacion (x /= 5), es equivalente x = x / 5, que da como resultado {x} \n')
+
+print("CONTADOR DE MODULO")
+print(f'La operacion (x %= 0.5), es equivalente al residuo de la división entre {x} / 0.5')
+x %= 2
+print(f'Esta operacion da como resultado {x} \n')
+
+print("CONTADOR DE POTENCIACION")
+x **= 2
+print(f'La operacion (x **= 2), es equivalente x = x^2, que da como resultado {x} \n')
+
 
 # Operadores Logicos
 A = True
