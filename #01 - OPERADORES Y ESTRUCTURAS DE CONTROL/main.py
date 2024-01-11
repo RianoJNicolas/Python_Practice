@@ -94,6 +94,9 @@ element = 2
 print(f'¿{element} esta en la lista? RTA->{element in my_list}')
 print(f'¿{element} no esta en la lista? RTA->{element not in my_list} \n')
 
+# Operadores de Identidad
+print("OPERADORES DE IDENTIDAD")
 print(f'¿{element} es {my_list[element]}? RTA->{element is my_list[element]}')
-print(f'¿{element} no es {my_list[element]}? RTA->{element is not my_list[element]}')
+print(f'¿{element} no es {my_list[element]}? RTA->{element is not my_list[element]}\n')
+
 
