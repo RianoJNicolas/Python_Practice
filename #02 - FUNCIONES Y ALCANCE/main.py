@@ -1,5 +1,7 @@
 import random
 
+variableGlobal = "Paso por aca, a desearte muchos exitos!!!"
+
 # (Funcion sin parametros ni retorno)
 # Funcion de bienvenida
 def welcomePlayer():
@@ -59,6 +61,7 @@ def playCompetition(optionPlayer):
 
 def run():
     welcomePlayer()
+    print(variableGlobal)
     option_player = functionInput()
     playCompetition(option_player)
 
