@@ -99,4 +99,35 @@ print("OPERADORES DE IDENTIDAD")
 print(f'¿{element} es {my_list[element]}? RTA->{element is my_list[element]}')
 print(f'¿{element} no es {my_list[element]}? RTA->{element is not my_list[element]}\n')
 
+# Estructuras de Control
+mode = input("Ingresa modo de juego 1 o 2:")
 
+# Ciclo while
+print("Ciclo while - Iterativa \n")
+while (mode != "1" and mode != "2"):
+    print("Please enter the correct input")
+    mode = input("Enter the mode: ")
+
+# Ciclo IF
+print("\nCiclo IF - Condicional")
+if (mode == "2"):
+    print("Elegiste modo de juego 2")
+else:
+    print("Elegiste modo de juego 1")
+
+# Ciclo for
+print("\nCiclo for - Iterativa")
+for i in range(0,5):
+    if (i%2==0):
+        print(f'{i} es un numero par')
+    else:
+        print(f'{i} es un numero impar')
+
+# Excepciones
+print("\nExcepciones")
+try:
+    dividendo = int(input("Ingresa el dividendo de la división: "))
+    divisor = int(input("Ingresa el divisor de la división: "))
+    division = dividendo/divisor
+except Exception as e:
+    print("Error !!!!", e)
