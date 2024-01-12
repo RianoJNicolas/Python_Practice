@@ -131,3 +131,13 @@ try:
     division = dividendo/divisor
 except Exception as e:
     print("Error !!!!", e)
+
+print("\n")
+# Dificultad Extra
+for i in range(9,56):
+    if (i == 16):
+        continue
+    elif (i%3 == 0):
+        continue
+    else:
+        print(i)
