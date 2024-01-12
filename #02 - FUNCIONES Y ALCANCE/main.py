@@ -1,6 +1,8 @@
 import random
 
-variableGlobal = "Paso por aca, a desearte muchos exitos!!!"
+# Variable global y funcion ya creada por el lenguaje
+variableGlobal = "Paso por aca, a desearte muchos exitos!!!\n"
+variableGlobal = variableGlobal.upper()
 
 # (Funcion sin parametros ni retorno)
 # Funcion de bienvenida
@@ -59,6 +61,7 @@ def playCompetition(optionPlayer):
         elif (optionPlayer == "tijera"):
             print("perdiste")
 
+
 def run():
     welcomePlayer()
     print(variableGlobal)
@@ -66,5 +69,22 @@ def run():
     playCompetition(option_player)
 
 
+def extraDifficult(param1, param2):
+    contador = 0
+    for i in range(0,101):
+        if (i%3 == 0 and i%5 == 0):
+            print(f'para el numero {i}: {param1} {param2}')
+        elif(i%3 == 0):
+            print(f'para el numero {i}: {param1}')
+        elif(i%5 == 0):
+            print(f'para el numero {i}: {param2}')
+        else:
+            contador += 1
+            print(f'para el numero {i} no hay texto')
+    return contador
+
+
 if __name__ == '__main__':
     run()
+    print("\nAhora vamos con el ejercicio extra\n")
+    print(extraDifficult("hola","mundo"))
