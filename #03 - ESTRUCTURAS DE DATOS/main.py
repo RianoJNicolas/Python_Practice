@@ -45,28 +45,34 @@ mySet = {1, 2, 3}
 
 # 1.5 Colecciones
 
-
 ## 1.5.1 Diccionarios Ordenados
 myOd = OrderedDict()
 myOd['first']  = 'one'
 myOd['second'] = 'two'
 myOd['third']  = 'three'
-print(f'Diccionario Ordenado {myOd}')
+print(f'Diccionario Ordenado {myOd}\n')
 
 ## 1.5.2 Diccionario Predeterminado
 prices = defaultdict(int)
 prices['carrots']
-print(f'Diccionario Predeterminado = {prices}')
+print(f'Diccionario Predeterminado = {prices}\n')
 
 ## 1.5.3 Queue (Cola)
 mydeque = deque([1, 2, 3, 4])
-print(f'La cola (deque) = {mydeque}')
+print(f'La cola (deque) = {mydeque}\n')
 
 # 1.6 Matrices
 myArray = array('f', [1.0, 1.5, 2.0, 2.5])
-print(f'Matriz = {myArray}')
+print(f'Matriz = {myArray}\n')
 
 # 2. Operando con las estructuras
-
-
+print("Operaciones con las Estructuras")
+# Listas
+print(f'Lista Inicial = {myList}')
+myList.append(6) # Insercion
+print(f'Lista despues de agregar un elemento = {myList}')
+myList.pop(1)
+print(f'Lista luego de borrar un elemento = {myList}')
+myList[0] = 100
+print(f'Lista actualizada = {myList}')
 # DIFICULTAD EXTRA
