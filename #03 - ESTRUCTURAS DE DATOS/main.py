@@ -66,13 +66,31 @@ myArray = array('f', [1.0, 1.5, 2.0, 2.5])
 print(f'Matriz = {myArray}\n')
 
 # 2. Operando con las estructuras
-print("Operaciones con las Estructuras")
+print("Operaciones con las Estructuras\n")
 # Listas
 print(f'Lista Inicial = {myList}')
 myList.append(6) # Insercion
 print(f'Lista despues de agregar un elemento = {myList}')
-myList.pop(1)
+myList.pop(1) # Borrado
 print(f'Lista luego de borrar un elemento = {myList}')
-myList[0] = 100
+myList[0] = 100 # Actualizacion
 print(f'Lista actualizada = {myList}')
+myList.sort() # Ordenacion
+print(f'Lista ordenada = {myList}\n')
+
+# Diccionarios
+print(f'Diccionario Inicial = {myDict}')
+myDict[6] = "un ingeniero electronico" # Insercion
+print(f'Diccionario despues de agregar un elemento = {myDict}')
+del myDict[1] # Borrado
+print(f'Diccionario luego de borrar un elemento = {myDict}')
+myDict[5] = "nicolas" # Actualizacion
+print(f'Diccionario actualizado = {myDict}')
+myOrderDict1 = sorted(myDict) # ordenacion de claves
+myOrderDict2 = sorted(myDict.values()) # ordenacion de valores
+myOrderDict3 = OrderedDict(sorted(myDict.items())) # ordenacion de elementos por clave
+print(f'Diccionario ordenado 1 = {myOrderDict1}')
+print(f'Diccionario ordenado 2 = {myOrderDict2}')
+print(f'Diccionario ordenado 3 = {myOrderDict3}\n')
+
 # DIFICULTAD EXTRA
