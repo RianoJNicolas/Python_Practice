@@ -21,6 +21,18 @@ myStack.pop()
 print(f'Pila quitando elemento = {myStack}\n')
 
 ## 1.1.2 Listas como Colas
+"""
+El primer elemento que se añade, es el primer que se retira
+"""
+myListDeque = deque(["Duvan", "Jhon", "Camilo"])
+print(f'Cola inicial = {myListDeque}')
+myListDeque.append("Fabian")
+myListDeque.append("Yuri")
+print(f'Cola agregando elementos = {myListDeque}')
+myListDeque.popleft()
+print(f'Cola quitando elementos = {myListDeque}')
+myListDeque.popleft()
+print(f'Cola quitando elementos = {myListDeque}\n')
 
 # 1.2 Tuplas
 myTuple = (1, 2, 3, 4, 5)
