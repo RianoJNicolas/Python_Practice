@@ -117,9 +117,7 @@ myNewTuple[0] = 3500
 myNewTuple = tuple(myNewTuple)
 print(f'Tupla actualizada = {myNewTuple}')
 # Ordenacion
-myNewTuple = list(myNewTuple)
-myNewTuple.sort()
-myNewTuple = tuple(myNewTuple)
+myNewTuple = tuple(sorted(myNewTuple))
 print(f'Tupla ordenada = {myNewTuple}\n')
 
 # DIFICULTAD EXTRA
