@@ -67,6 +67,7 @@ print(f'Matriz = {myArray}\n')
 
 # 2. Operando con las estructuras
 print("Operaciones con las Estructuras\n")
+
 # Listas
 print(f'Lista Inicial = {myList}')
 myList.append(6) # Insercion
@@ -92,5 +93,33 @@ myOrderDict3 = OrderedDict(sorted(myDict.items())) # ordenacion de elementos por
 print(f'Diccionario ordenado 1 = {myOrderDict1}')
 print(f'Diccionario ordenado 2 = {myOrderDict2}')
 print(f'Diccionario ordenado 3 = {myOrderDict3}\n')
+
+# Tuplas 
+print(f'Tupla Inicial = {myTuple}')
+"""
+Recordar que una tupla es un tipo de estructura inmutable, por lo tanto,
+no se puede agregar o borrar elementos. Para hacer estas operaciones, se
+puede transformar a una lista y luego volver a una tupla.
+"""
+# Insercion
+myNewTuple = list(myTuple)
+myNewTuple.append(100)
+myNewTuple = tuple(myNewTuple)
+print(f'Tupla despues de agregar un elemento = {myNewTuple}')
+# Borrado
+myNewTuple = list(myNewTuple)
+myNewTuple.pop(2) # Eliminar posicion 2 de la lista
+myNewTuple = tuple(myNewTuple)
+print(f'Tupla luego de borrar un elemento = {myNewTuple}')
+# Actualizacion
+myNewTuple = list(myNewTuple)
+myNewTuple[0] = 3500
+myNewTuple = tuple(myNewTuple)
+print(f'Tupla actualizada = {myNewTuple}')
+# Ordenacion
+myNewTuple = list(myNewTuple)
+myNewTuple.sort()
+myNewTuple = tuple(myNewTuple)
+print(f'Tupla ordenada = {myNewTuple}\n')
 
 # DIFICULTAD EXTRA
