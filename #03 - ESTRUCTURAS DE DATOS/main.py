@@ -120,4 +120,19 @@ print(f'Tupla actualizada = {myNewTuple}')
 myNewTuple = tuple(sorted(myNewTuple))
 print(f'Tupla ordenada = {myNewTuple}\n')
 
+# Set
+print(f'Set Inicial = {mySet}')
+mySet.add(6)
+mySet.add(1000) # Insercion
+print(f'Set despues de agregar elementos = {mySet}')
+mySet.discard(3)
+mySet.remove(2) # Borrado
+print(f'Set luego de borrar un elemento = {mySet}')
+mySet.discard(1)
+mySet.add(55) # Actualizacion
+print(f'Set actualizado = {mySet}')
+mySet = sorted(mySet) # Se ordena pero queda de tipo lista
+mySet = set(mySet)
+print(f'Set ordenado = {mySet}\n')
+
 # DIFICULTAD EXTRA
