@@ -136,15 +136,40 @@ mySet = set(mySet)
 print(f'Set ordenado = {mySet}\n')
 
 # DIFICULTAD EXTRA
+def welcomeMenu():
+    print("""
+Hola !!, soy tu agenda de contactos. Aca puedes agregar, 
+actualizar, borrar y buscar cualquiera de tus contactos.
+
+Recuerda que el contacto simplemente tiene el nombre y el
+telefono correspondiente.
+
+¡¡¡ Comencemos!!!  
+        """)
+    name = input("Ingresa tu nombre: ")
+    print(f'{name}, escoge alguna de las siguientes opciones:')
+    print("""
+    1. Busqueda de contactos
+    2. Agregar un contacto
+    3. Actualizar un contacto
+    4. Eliminar un contacto
+        """)
+    option = input("Ingresa la acción a realizar: ")
+    while (option != '1' and option != '2' and option != '3' and option != '4'):
+        print("Ingresaste un valor erroneo, vuelvelo a intentar")
+        option = input("Ingresa la acción a realizar: ")
+    return(option)
+
+
 def run():
     # Bienvenida al software
+    userOption = welcomeMenu()
     # Que operacion realizar (menu)
         # Operacion de busqueda de contacto
         # Operacion de agregar un contacto
         # Operacion de actualizar un contacto
         # Operacion de eliminar un contacto
     # opcion de salida o terminacion del programa
-    pass
 
 
 if __name__ == '__main__':
