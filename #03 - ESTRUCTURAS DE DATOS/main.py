@@ -136,3 +136,16 @@ mySet = set(mySet)
 print(f'Set ordenado = {mySet}\n')
 
 # DIFICULTAD EXTRA
+def run():
+    # Bienvenida al software
+    # Que operacion realizar (menu)
+        # Operacion de busqueda de contacto
+        # Operacion de agregar un contacto
+        # Operacion de actualizar un contacto
+        # Operacion de eliminar un contacto
+    # opcion de salida o terminacion del programa
+    pass
+
+
+if __name__ == '__main__':
+    run()
