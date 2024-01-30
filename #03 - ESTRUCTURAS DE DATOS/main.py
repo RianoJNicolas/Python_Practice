@@ -136,7 +136,14 @@ mySet = set(mySet)
 print(f'Set ordenado = {mySet}\n')
 
 # DIFICULTAD EXTRA
-def welcomeMenu():
+
+dirContacts = {
+    "3015675434" : "Lucho Diaz",
+    "3106742354" : "Rigoberto Uran",
+    "3205438756" : "Pedro Urango"
+}
+
+def welcome_Menu():
     print("""
 Hola !!, soy tu agenda de contactos. Aca puedes agregar, 
 actualizar, borrar y buscar cualquiera de tus contactos.
@@ -161,9 +168,58 @@ telefono correspondiente.
     return(option)
 
 
+def check_Input(numberContact):
+    pass
+
+
+def find_Contact(dirContacts, numberContact, nameContact, option):
+    if (option == "number"):
+        contact = dirContacts[numberContact]
+        print(f'El numero de celular {numberContact} le corresponde a {contact}')
+    elif (option == "name"):
+        keys = []
+        for clave, valor in dirContacts.items():
+            if valor == nameContact:
+                keys.append(clave)
+        print(f'{nameContact} tiene el numero de celular {str(keys)}')
+
+def add_Contact(dirContacts, numberContact, nameContact):
+    pass
+
+
+def del_Contact(dirContacts, numberContact, nameContact):
+    pass
+
+
+def update_Contact(dirContacts, numberContact, nameContact):
+    pass
+
+
+def execute_Option(option, dirContacts, numberContact, still, nameContact='0'):
+    if (option == '1'):
+        find_Contact(dirContacts, numberContact, nameContact, "name")
+        still = True
+    elif(option == '2'):
+        dirContacts = add_Contact(dirContacts, numberContact, nameContact)
+        still = True
+    elif(option == '3'):
+        dirContacts = del_Contact(dirContacts, numberContact, nameContact)
+        still = True
+    elif(option == '4'): 
+        dirContacts = update_Contact(dirContacts, numberContact, nameContact)
+        still = True
+    else:
+        still = False
+    
+    return dirContacts, still
+
+
 def run():
     # Bienvenida al software
-    userOption = welcomeMenu()
+    userOption = welcome_Menu()
+    # numberContact = "3015675434"
+    nameContact = "Rigoberto Uran"
+    execute_Option(userOption, dirContacts, '0', False, nameContact)
     # Que operacion realizar (menu)
         # Operacion de busqueda de contacto
         # Operacion de agregar un contacto
