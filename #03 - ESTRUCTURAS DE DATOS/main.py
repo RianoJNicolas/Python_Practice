@@ -168,20 +168,17 @@ telefono correspondiente.
     return(option)
 
 
+def get_Inputs():
+    
+
+    return numberContact, nameContact
+
+
 def check_Input(numberContact):
     pass
 
 
-def find_Contact(dirContacts, numberContact, nameContact):
-    print("""
-    Para realizar la busqueda de algun contacto tienes dos opciones:
-        1. Buscar por el numero de telefono
-        2. Buscar por el nombre de contacto
-    """)
-    option = input("Ingresa la opcion que quieres: ")
-    while (option != '1' and option != '2'):
-        print("Ingresaste un valor erroneo, vuelvelo a intentar")
-        option = input("Ingresa la acción a realizar: ")
+def find_Contact(dirContacts, numberContact, nameContact, option):
     if (option == "1"):
         contact = dirContacts[numberContact]
         print(f'El numero de celular {numberContact} le corresponde a {contact}')
@@ -191,6 +188,7 @@ def find_Contact(dirContacts, numberContact, nameContact):
             if valor == nameContact:
                 keys.append(clave)
         print(f'{nameContact} tiene el numero de celular {str(keys)}')
+
 
 def add_Contact(dirContacts, numberContact, nameContact):
     dirContacts[numberContact] = nameContact
@@ -210,9 +208,18 @@ def update_Contact(dirContacts, numberContact, nameContact):
     pass
 
 
-def execute_Option(option, dirContacts, numberContact, still, nameContact):
+def execute_Option(option, still):
     if (option == '1'):
-        find_Contact(dirContacts, numberContact, nameContact, "name")
+        print("""
+        Para realizar la busqueda de algun contacto tienes dos opciones:
+            1. Buscar por el numero de telefono
+            2. Buscar por el nombre de contacto
+        """)
+        optionSearch = input("Ingresa la opcion que quieres: ")
+        while (optionSearch != '1' and optionSearch != '2'):
+            print("Ingresaste un valor erroneo, vuelvelo a intentar")
+            optionSearch = input("Ingresa la opcion que quieres: ")
+        find_Contact(dirContacts, numberContact, nameContact, optionSearch)
         still = True
     elif(option == '2'):
         dirContacts = add_Contact(dirContacts, numberContact, nameContact)
