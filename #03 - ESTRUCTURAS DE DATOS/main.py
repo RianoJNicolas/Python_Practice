@@ -172,11 +172,20 @@ def check_Input(numberContact):
     pass
 
 
-def find_Contact(dirContacts, numberContact, nameContact, option):
-    if (option == "number"):
+def find_Contact(dirContacts, numberContact, nameContact):
+    print("""
+    Para realizar la busqueda de algun contacto tienes dos opciones:
+        1. Buscar por el numero de telefono
+        2. Buscar por el nombre de contacto
+    """)
+    option = input("Ingresa la opcion que quieres: ")
+    while (option != '1' and option != '2'):
+        print("Ingresaste un valor erroneo, vuelvelo a intentar")
+        option = input("Ingresa la acción a realizar: ")
+    if (option == "1"):
         contact = dirContacts[numberContact]
         print(f'El numero de celular {numberContact} le corresponde a {contact}')
-    elif (option == "name"):
+    elif (option == "2"):
         keys = []
         for clave, valor in dirContacts.items():
             if valor == nameContact:
@@ -184,7 +193,13 @@ def find_Contact(dirContacts, numberContact, nameContact, option):
         print(f'{nameContact} tiene el numero de celular {str(keys)}')
 
 def add_Contact(dirContacts, numberContact, nameContact):
-    pass
+    dirContacts[numberContact] = nameContact
+    print(f'Agregaste a tu agenda de contactos el nombre {nameContact}')
+    print(f'y le asignaste el numero de celular {numberContact} \n')
+
+    print("Tu agenda queda de la siguiente manera:")
+    for clave, valor in dirContacts.items():
+        print(f'{valor} su numero es {clave}')
 
 
 def del_Contact(dirContacts, numberContact, nameContact):
@@ -195,7 +210,7 @@ def update_Contact(dirContacts, numberContact, nameContact):
     pass
 
 
-def execute_Option(option, dirContacts, numberContact, still, nameContact='0'):
+def execute_Option(option, dirContacts, numberContact, still, nameContact):
     if (option == '1'):
         find_Contact(dirContacts, numberContact, nameContact, "name")
         still = True
@@ -217,9 +232,9 @@ def execute_Option(option, dirContacts, numberContact, still, nameContact='0'):
 def run():
     # Bienvenida al software
     userOption = welcome_Menu()
-    # numberContact = "3015675434"
-    nameContact = "Rigoberto Uran"
-    execute_Option(userOption, dirContacts, '0', False, nameContact)
+    numberContact = "3015687654"
+    nameContact = "Sergio Higuita"
+    execute_Option(userOption, dirContacts, numberContact, False, nameContact)
     # Que operacion realizar (menu)
         # Operacion de busqueda de contacto
         # Operacion de agregar un contacto
