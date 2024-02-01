@@ -178,7 +178,7 @@ def check_Input(numberContact):
     pass
 
 
-def find_Contact(dirContacts, numberContact, nameContact, option):
+def find_Contact(numberContact, nameContact, option):
     if (option == "1"):
         contact = dirContacts[numberContact]
         print(f'El numero de celular {numberContact} le corresponde a {contact}')
@@ -216,10 +216,25 @@ def execute_Option(option, still):
             2. Buscar por el nombre de contacto
         """)
         optionSearch = input("Ingresa la opcion que quieres: ")
+        
         while (optionSearch != '1' and optionSearch != '2'):
             print("Ingresaste un valor erroneo, vuelvelo a intentar")
             optionSearch = input("Ingresa la opcion que quieres: ")
-        find_Contact(dirContacts, numberContact, nameContact, optionSearch)
+        
+        if (optionSearch == '1'):
+            numberContact = input("Ingresa el numero de telefono a buscar: ")
+            lenNumber = len(numberContact)
+            numeric = numberContact.isnumeric()
+
+            while (lenNumber != 10):
+                print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                numberContact = input("Ingresa el numero de telefono a buscar: " )
+                lenNumber = len(numberContact)
+                
+            find_Contact(numberContact, "0", optionSearch)
+        elif (optionSearch == '2'):
+            nameContact = input("Ingresa el nombre del contacto a buscar: ")
+            find_Contact("0", nameContact, optionSearch)
         still = True
     elif(option == '2'):
         dirContacts = add_Contact(dirContacts, numberContact, nameContact)
@@ -233,7 +248,7 @@ def execute_Option(option, still):
     else:
         still = False
     
-    return dirContacts, still
+    return still
 
 
 def run():
@@ -241,7 +256,7 @@ def run():
     userOption = welcome_Menu()
     numberContact = "3015687654"
     nameContact = "Sergio Higuita"
-    execute_Option(userOption, dirContacts, numberContact, False, nameContact)
+    execute_Option(userOption, False)
     # Que operacion realizar (menu)
         # Operacion de busqueda de contacto
         # Operacion de agregar un contacto
