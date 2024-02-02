@@ -135,8 +135,9 @@ mySet = sorted(mySet) # Se ordena pero queda de tipo lista
 mySet = set(mySet)
 print(f'Set ordenado = {mySet}\n')
 
+# -----------------------------------------------------------
 # DIFICULTAD EXTRA
-
+# -----------------------------------------------------------
 dirContacts = {
     "3015675434" : "Lucho Diaz",
     "3106742354" : "Rigoberto Uran",
@@ -180,7 +181,7 @@ def check_Input(numberContact):
 
 def find_Contact(numberContact, nameContact, option):
     if (option == "1"):
-        contact = dirContacts[numberContact]
+        contact = dirContacts.get(numberContact)
         print(f'El numero de celular {numberContact} le corresponde a {contact}')
     elif (option == "2"):
         keys = []
@@ -226,7 +227,7 @@ def execute_Option(option, still):
             lenNumber = len(numberContact)
             numeric = numberContact.isnumeric()
 
-            while (lenNumber != 10):
+            while (lenNumber < 10 and not(numeric)):
                 print("Ingresaste un valor erroneo, vuelvelo a intentar")
                 numberContact = input("Ingresa el numero de telefono a buscar: " )
                 lenNumber = len(numberContact)
