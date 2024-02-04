@@ -1,5 +1,6 @@
 from collections import OrderedDict, defaultdict, deque
 from array import array
+import re
 # 1. Ejemplos de estructuras de datos
 
 # 1.1 Listas
@@ -176,6 +177,9 @@ def get_Inputs():
 
 
 def check_Input(numberContact):
+    patron = r"^\d{10}$" # Expresión regular para comprobar que tenga 10 dígitos y no contenga ningún carácter alfabético
+    # Devolver True si el número cumple el patrón, o False en caso contrario
+    return re.match(patron, numberContact) is not None
     pass
 
 
@@ -224,21 +228,10 @@ def execute_Option(option, still):
         
         if (optionSearch == '1'):
             numberContact = input("Ingresa el numero de telefono a buscar: ")
-            lenNumber = len(numberContact)
-            numeric = numberContact.isnumeric()
-            x = True
 
-            while x:
-                if numeric and lenNumber == 10:
-                    break
-                elif numeric and lenNumber < 10:
-                    print("Ingresaste un valor erroneo, vuelvelo a intentar")
-                    numberContact = input("Ingresa el numero de telefono a buscar: " )
-                    x = False
-                else:
-                    print("Ingresaste un valor erroneo, vuelvelo a intentar")
-                    numberContact = input("Ingresa el numero de telefono a buscar: " )
-                    x = False
+            while not check_Input(numberContact):
+                print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                numberContact = input("Ingresa el numero de telefono a buscar: ")
                 
             find_Contact(numberContact, "0", optionSearch)
         elif (optionSearch == '2'):
@@ -275,4 +268,4 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    run()    
