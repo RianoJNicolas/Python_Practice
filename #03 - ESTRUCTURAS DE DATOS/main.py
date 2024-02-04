@@ -226,11 +226,19 @@ def execute_Option(option, still):
             numberContact = input("Ingresa el numero de telefono a buscar: ")
             lenNumber = len(numberContact)
             numeric = numberContact.isnumeric()
+            x = True
 
-            while (lenNumber < 10 and not(numeric)):
-                print("Ingresaste un valor erroneo, vuelvelo a intentar")
-                numberContact = input("Ingresa el numero de telefono a buscar: " )
-                lenNumber = len(numberContact)
+            while x:
+                if numeric and lenNumber == 10:
+                    break
+                elif numeric and lenNumber < 10:
+                    print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                    numberContact = input("Ingresa el numero de telefono a buscar: " )
+                    x = False
+                else:
+                    print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                    numberContact = input("Ingresa el numero de telefono a buscar: " )
+                    x = False
                 
             find_Contact(numberContact, "0", optionSearch)
         elif (optionSearch == '2'):
