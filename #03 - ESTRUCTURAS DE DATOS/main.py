@@ -170,12 +170,6 @@ telefono correspondiente.
     return(option)
 
 
-def get_Inputs():
-    
-
-    return numberContact, nameContact
-
-
 def check_Input(numberContact):
     patron = r"^\d{10}$" # Expresión regular para comprobar que tenga 10 dígitos y no contenga ningún carácter alfabético
     # Devolver True si el número cumple el patrón, o False en caso contrario
@@ -205,8 +199,17 @@ def add_Contact(dirContacts, numberContact, nameContact):
         print(f'{valor} su numero es {clave}')
 
 
-def del_Contact(dirContacts, numberContact, nameContact):
-    pass
+def del_Contact(dirContacts, numberContact, nameContact, option):
+    if (option == "1"):
+        contact = dirContacts.get(numberContact)
+        print(f'Estas seguro que deseas eliminar el contacto de {contact} con el numero {numbercontact}')
+        delete = input("Ingres Yes/No: ")
+        if (delete == "Yes"):
+            del dirContacts[numberContact]
+    
+    elif (option == "2"):
+        # Agregar eliminar opcion de eliminar por nombre
+        continue
 
 
 def update_Contact(dirContacts, numberContact, nameContact):
