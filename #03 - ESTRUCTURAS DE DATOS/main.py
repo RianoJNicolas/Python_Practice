@@ -208,8 +208,12 @@ def del_Contact(dirContacts, numberContact, nameContact, option):
             del dirContacts[numberContact]
     
     elif (option == "2"):
-        # Agregar eliminar opcion de eliminar por nombre
-        continue
+        keys = []
+        for clave, valor in dirContacts.items():
+            if valor == nameContact:
+                keys.append(clave)
+        
+        
 
 
 def update_Contact(dirContacts, numberContact, nameContact):
