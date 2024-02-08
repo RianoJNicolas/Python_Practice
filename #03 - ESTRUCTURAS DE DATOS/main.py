@@ -258,8 +258,30 @@ def execute_Option(option, still):
     elif(option == '3'):
         dirContacts = update_Contact(numberContact, nameContact)
         still = True
-    elif(option == '4'): 
-        dirContacts = del_Contact(numberContact, nameContact, option)
+    elif(option == '4'):
+        print("""
+        Para eliminar un contacto tienes dos opciones:
+            1. Eliminar por el numero de telefono
+            2. Eliminar por el nombre de contacto
+        """)
+        optionDel = input("Ingresa la opcion que quieres: ")
+
+        while (optionDel != '1' and optionDel != '2'):
+            print("Ingresaste un valor erroneo, vuelvelo a intentar")
+            optionDel = input("Ingresa la opcion que quieres: ")
+        
+        if (optionDel == '1'):
+            numberContact = input("Ingresa el numero de telefono a buscar: ")
+
+            while not check_Input(numberContact):
+                print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                numberContact = input("Ingresa el numero de telefono a buscar: ")
+                
+            del_Contact(numberContact, "0", optionDel)
+        elif (optionDel == '2'):
+            nameContact = input("Ingresa el nombre del contacto a buscar: ")
+            del_Contact("numberContact", nameContact, optionDel)
+
         still = True
     else:
         still = False
@@ -270,8 +292,6 @@ def execute_Option(option, still):
 def run():
     # Bienvenida al software
     userOption = welcome_Menu()
-    numberContact = "3015687654"
-    nameContact = "Sergio Higuita"
     execute_Option(userOption, False)
     # Que operacion realizar (menu)
         # Operacion de busqueda de contacto
