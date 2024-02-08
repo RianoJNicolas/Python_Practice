@@ -199,10 +199,10 @@ def add_Contact(dirContacts, numberContact, nameContact):
         print(f'{valor} su numero es {clave}')
 
 
-def del_Contact(dirContacts, numberContact, nameContact, option):
+def del_Contact(numberContact, nameContact, option):
     if (option == "1"):
         contact = dirContacts.get(numberContact)
-        print(f'Estas seguro que deseas eliminar el contacto de {contact} con el numero {numbercontact}')
+        print(f'Estas seguro que deseas eliminar el contacto de {contact} con el numero {numberContact}')
         delete = input("Ingres Yes/No: ")
         if (delete == "Yes"):
             del dirContacts[numberContact]
@@ -212,8 +212,15 @@ def del_Contact(dirContacts, numberContact, nameContact, option):
         for clave, valor in dirContacts.items():
             if valor == nameContact:
                 keys.append(clave)
-        
-        
+        for item in keys:
+            print(f'Encontramos que para el numero {item} se encuentra el contacto de {dirContacts.get(item)}')
+            delete = input("Deseas Eliminarlo totalmente Yes/No: ")
+            if (delete == "Yes"):
+                del dirContacts[item]
+            elif (delete == "No"):
+                continue
+            else:
+                print("Ingresaste una opción incorrecta")
 
 
 def update_Contact(dirContacts, numberContact, nameContact):
@@ -246,13 +253,13 @@ def execute_Option(option, still):
             find_Contact("0", nameContact, optionSearch)
         still = True
     elif(option == '2'):
-        dirContacts = add_Contact(dirContacts, numberContact, nameContact)
+        dirContacts = add_Contact(numberContact, nameContact)
         still = True
     elif(option == '3'):
-        dirContacts = del_Contact(dirContacts, numberContact, nameContact)
+        dirContacts = update_Contact(numberContact, nameContact)
         still = True
     elif(option == '4'): 
-        dirContacts = update_Contact(dirContacts, numberContact, nameContact)
+        dirContacts = del_Contact(numberContact, nameContact, option)
         still = True
     else:
         still = False
