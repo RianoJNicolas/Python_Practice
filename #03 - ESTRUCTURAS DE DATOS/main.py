@@ -176,6 +176,11 @@ def check_Input(numberContact):
     return re.match(patron, numberContact) is not None
 
 
+def printContacts(dirContacts):
+    print("Tu agenda queda de la siguiente manera:")
+    for clave, valor in dirContacts.items():
+        print(f'{valor} su numero es {clave}')
+
 def find_Contact(numberContact, nameContact, option):
     if (option == "1"):
         contact = dirContacts.get(numberContact)
@@ -193,16 +198,14 @@ def add_Contact(numberContact, nameContact):
     print(f'Agregaste a tu agenda de contactos el nombre {nameContact}')
     print(f'y le asignaste el numero de celular {numberContact} \n')
 
-    print("Tu agenda queda de la siguiente manera:")
-    for clave, valor in dirContacts.items():
-        print(f'{valor} su numero es {clave}')
+    printContacts(dirContacts)
 
 
 def del_Contact(numberContact, nameContact, option):
     if (option == "1"):
         contact = dirContacts.get(numberContact)
         print(f'Estas seguro que deseas eliminar el contacto de {contact} con el numero {numberContact}')
-        delete = input("Ingres Yes/No: ")
+        delete = input("Ingresa Yes/No: ")
         if (delete == "Yes"):
             del dirContacts[numberContact]
     
@@ -222,9 +225,24 @@ def del_Contact(numberContact, nameContact, option):
                 print("Ingresaste una opción incorrecta")
 
 
-def update_Contact(dirContacts, numberContact, nameContact):
-    pass
+def update_Contact(numberContact, nameContact, option):
+    if (option == "1"):
+        contact = dirContacts.get(numberContact)
+        print(f'Vas a actualizar el contacto de {contact} con el numero {numberContact}')
+        print(f'¿Que numero deseas colocar ahora al contacto {contact}?')
+        newNumberContact = input("Ingresalo aqui: ")
 
+        while not check_Input(newNumberContact):
+            print("Ingresaste un valor erroneo, vuelvelo a intentar")
+            numberContact = input("Ingresalo nuevamente: ")
+        
+        print(f'Vas a actualizar {numberContact} por {newNumberContact}')
+        update = input("¿ Estas segur@ de realizar esta operacion ? (Yes/No): ")
+        if (update == "Yes"):
+            del dirContacts[numberContact]
+            dirContacts[newNumberContact] = contact
+
+        printContacts(dirContacts)
 
 def execute_Option(option, still):
     if (option == '1'):
@@ -264,8 +282,31 @@ def execute_Option(option, still):
         still = True
 
     elif(option == '3'):
-        update_Contact(numberContact, nameContact)
+        print("""
+        Para realizar la actualizacion de algun contacto tienes dos opciones:
+            1. Actualizar el numero de telefono
+            2. Actualizar el nombre de contacto
+        """)
+        optionUpdate = input("Ingresa la opcion que quieres: ")
+        
+        while (optionUpdate != '1' and optionUpdate != '2'):
+            print("Ingresaste un valor erroneo, vuelvelo a intentar")
+            optionUpdate = input("Ingresa la opcion que quieres: ")
+        
+        if (optionUpdate == '1'):
+            numberContact = input("Ingresa el numero de telefono que vas a actualizar: ")
+
+            while not check_Input(numberContact):
+                print("Ingresaste un valor erroneo, vuelvelo a intentar")
+                numberContact = input("Ingresa de nuevo el numero de telefono: ")
+                
+            update_Contact(numberContact, "0", optionUpdate)
+
+        elif (optionUpdate == '2'):
+            nameContact = input("Ingresa el nombre del contacto a buscar: ")
+            update_Contact("0", nameContact, optionUpdate)    
         still = True
+
     elif(option == '4'):
         print("""
         Para eliminar un contacto tienes dos opciones:
