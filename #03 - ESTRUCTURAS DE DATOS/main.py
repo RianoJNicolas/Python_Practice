@@ -174,7 +174,6 @@ def check_Input(numberContact):
     patron = r"^\d{10}$" # Expresión regular para comprobar que tenga 10 dígitos y no contenga ningún carácter alfabético
     # Devolver True si el número cumple el patrón, o False en caso contrario
     return re.match(patron, numberContact) is not None
-    pass
 
 
 def find_Contact(numberContact, nameContact, option):
@@ -189,7 +188,7 @@ def find_Contact(numberContact, nameContact, option):
         print(f'{nameContact} tiene el numero de celular {str(keys)}')
 
 
-def add_Contact(dirContacts, numberContact, nameContact):
+def add_Contact(numberContact, nameContact):
     dirContacts[numberContact] = nameContact
     print(f'Agregaste a tu agenda de contactos el nombre {nameContact}')
     print(f'y le asignaste el numero de celular {numberContact} \n')
@@ -252,11 +251,20 @@ def execute_Option(option, still):
             nameContact = input("Ingresa el nombre del contacto a buscar: ")
             find_Contact("0", nameContact, optionSearch)
         still = True
+
     elif(option == '2'):
-        dirContacts = add_Contact(numberContact, nameContact)
+        nameContact = input("Ingresa el nombre del contacto que vas a agregar: ")
+        numberContact = input("Ingresa el numero de telefono: ")
+
+        while not check_Input(numberContact):
+            print("Ingresaste un valor erroneo, vuelvelo a intentar")
+            numberContact = input("Ingresa nuevamente el numero de telefono: ")
+
+        add_Contact(numberContact, nameContact)
         still = True
+
     elif(option == '3'):
-        dirContacts = update_Contact(numberContact, nameContact)
+        update_Contact(numberContact, nameContact)
         still = True
     elif(option == '4'):
         print("""
