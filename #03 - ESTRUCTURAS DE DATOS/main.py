@@ -215,7 +215,7 @@ def del_Contact(numberContact, nameContact, option):
             if valor == nameContact:
                 keys.append(clave)
         for item in keys:
-            print(f'Encontramos que para el numero {item} se encuentra el contacto de {dirContacts.get(item)}')
+            print(f'Encontramos que para el contacto de {dirContacts.get(item)} se tiene el numero {item}')
             delete = input("Deseas Eliminarlo totalmente Yes/No: ")
             if (delete == "Yes"):
                 del dirContacts[item]
@@ -249,7 +249,7 @@ def update_Contact(numberContact, nameContact, option):
                 keys.append(clave)
         
         for item in keys:
-            print(f'Encontramos que para el numero {item} se encuentra el contacto de {dirContacts.get(item)}')
+            print(f'Encontramos que para el contacto de {dirContacts.get(item)} se tiene el numero {item}')
             update = input("Deseas actualizar el nombre Yes/No: ")
             if (update == "Yes"):
                 dirContacts[numberContact] = nameContact
