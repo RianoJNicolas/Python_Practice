@@ -350,7 +350,7 @@ def execute_Option(option, still):
             del_Contact("numberContact", nameContact, optionDel)
 
         still = True
-    else:
+    elif(option == "5"):
         still = False
     
     return still
@@ -358,13 +358,10 @@ def execute_Option(option, still):
 
 def run():
     # Bienvenida al software
-    userOption = welcome_Menu()
-    execute_Option(userOption, False)
-    # Que operacion realizar (menu)
-        # Operacion de busqueda de contacto
-        # Operacion de agregar un contacto
-        # Operacion de actualizar un contacto
-        # Operacion de eliminar un contacto
+    x = True
+    while(x):
+        userOption = welcome_Menu()
+        x = execute_Option(userOption, True)
     # opcion de salida o terminacion del programa
 
 
