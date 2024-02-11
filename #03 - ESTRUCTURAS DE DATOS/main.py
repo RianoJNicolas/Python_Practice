@@ -156,18 +156,24 @@ telefono correspondiente.
 ¡¡¡ Comencemos!!!  
         """)
     name = input("Ingresa tu nombre: ")
-    print(f'{name}, escoge alguna de las siguientes opciones:')
+    option = mainMenu(name)
+    return option
+
+
+def mainMenu(userName):
+    print(f'{userName}, escoge alguna de las siguientes opciones:')
     print("""
     1. Busqueda de contactos
     2. Agregar un contacto
     3. Actualizar un contacto
     4. Eliminar un contacto
+    5. Salir 
         """)
     option = input("Ingresa la acción a realizar: ")
-    while (option != '1' and option != '2' and option != '3' and option != '4'):
+    while (option != '1' and option != '2' and option != '3' and option != '4' and option != '5'):
         print("Ingresaste un valor erroneo, vuelvelo a intentar")
         option = input("Ingresa la acción a realizar: ")
-    return(option)
+    return option
 
 
 def check_Input(numberContact):
