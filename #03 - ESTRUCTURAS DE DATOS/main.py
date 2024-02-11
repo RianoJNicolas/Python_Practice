@@ -242,6 +242,18 @@ def update_Contact(numberContact, nameContact, option):
             del dirContacts[numberContact]
             dirContacts[newNumberContact] = contact
 
+    elif (option == "2"):
+        keys = []
+        for clave, valor in dirContacts.items():
+            if valor == nameContact:
+                keys.append(clave)
+        
+        for item in keys:
+            print(f'Encontramos que para el numero {item} se encuentra el contacto de {dirContacts.get(item)}')
+            update = input("Deseas actualizar el nombre Yes/No: ")
+            if (update == "Yes"):
+                dirContacts[numberContact] = nameContact
+        
         printContacts(dirContacts)
 
 def execute_Option(option, still):
