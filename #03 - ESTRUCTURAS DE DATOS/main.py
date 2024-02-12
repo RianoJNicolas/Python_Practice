@@ -357,12 +357,10 @@ def execute_Option(option, still):
 
 
 def run():
-    # Bienvenida al software
     x = True
     while(x):
         userOption = welcome_Menu()
         x = execute_Option(userOption, True)
-    # opcion de salida o terminacion del programa
 
 
 if __name__ == '__main__':
