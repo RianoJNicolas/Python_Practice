@@ -13,3 +13,5 @@ saludoTotal = saludo*3
 print(saludoTotal)
 
 # 4. Operacion de partcion
+primerCorte = saludo[0:2:1]
+print(primerCorte)
