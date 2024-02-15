@@ -24,7 +24,21 @@ print(tercerCorte)
 print(cuartoCorte)
 
 # 5. Acceso a caracteres
-caracter1 = saludo[0]
-caracter2 = saludo[4]
+caracter1 = sal[0]
+caracter2 = sal[4]
 print(caracter1)
 print(caracter2)
+
+# 6. Longitud
+longitudString = len(sal)
+print(f'La longitud de la cadena "{sal}" es de {longitudString}')
+
+# 7. Recorrido
+for i in range(longitudString):
+    print(sal[i])
+
+# 8. Mayusculas y Minusculas
+salMayus = sal.upper()
+print(salMayus)
+salMinus = sal.lower()
+print(salMinus)
