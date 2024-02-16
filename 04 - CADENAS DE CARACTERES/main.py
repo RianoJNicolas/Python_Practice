@@ -42,3 +42,11 @@ salMayus = sal.upper()
 print(salMayus)
 salMinus = sal.lower()
 print(salMinus)
+
+# 9. Reemplazo
+salReplace = sal
+print(f'Palabra Original -> {salReplace}')
+salReplace = salReplace.replace("o", "2") # Reemplaza todas las "o" por un "2"
+print(f'Primer reemplazo de letra "0" por un "2" -> {salReplace}')
+salReplace = salReplace.replace("2", "o", 1) # Reemplaza el primer "2" por una "o"
+print(f'Segundo reemplazo, primer "2" por una "o" -> {salReplace}')
