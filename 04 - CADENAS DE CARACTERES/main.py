@@ -50,3 +50,13 @@ salReplace = salReplace.replace("o", "2") # Reemplaza todas las "o" por un "2"
 print(f'Primer reemplazo de letra "0" por un "2" -> {salReplace}')
 salReplace = salReplace.replace("2", "o", 1) # Reemplaza el primer "2" por una "o"
 print(f'Segundo reemplazo, primer "2" por una "o" -> {salReplace}')
+
+# 10. Divison o Separacion
+salDiv = sal
+print(f'Palabra Original -> {salDiv}')
+salDiv = salDiv.split(",") # Separa la cadena por el caracter "," y los deja en una lista
+print(f'Separacion = {salDiv}')
+salDiv = sal + " Me llamo Johan, soy ingeneriero electronico, me gusta el futbol, la programacion y la f1"
+print(f'Otra separacion de la siguiente cadena -> {salDiv}')
+salDiv = salDiv.split(",", 2) # Separa por comas solo las dos primeras comas
+print(f'Separacion = {salDiv}')
