@@ -60,3 +60,9 @@ salDiv = sal + " Me llamo Johan, soy ingeneriero electronico, me gusta el futbol
 print(f'Otra separacion de la siguiente cadena -> {salDiv}')
 salDiv = salDiv.split(",", 2) # Separa por comas solo las dos primeras comas
 print(f'Separacion = {salDiv}')
+
+# 11. Union
+myStringList = ["uno", "dos", "tres", "cuatro"]
+print(f'Lista -> {myStringList}')
+myString = ", ".join(myStringList)
+print(f'Lista unida en un string -> {myString}')
