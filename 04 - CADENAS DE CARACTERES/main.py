@@ -66,3 +66,11 @@ myStringList = ["uno", "dos", "tres", "cuatro"]
 print(f'Lista -> {myStringList}') # Interpolacion utilizando f-string y {}
 myString = ", ".join(myStringList)
 print(f'Lista unida en un string -> {myString}') # Interpolacion utilizando f-string y {}
+
+# 12. Verificacion
+letra = "a"
+print(f"String Base -> {sal}")
+if letra in sal:
+    print(f"La letra {letra} si esta en {sal}")
+else:
+    print(f"La letra {letra} no esta en {sal}")
