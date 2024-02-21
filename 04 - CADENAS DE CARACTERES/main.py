@@ -96,14 +96,20 @@ def palindromo(palabra):
 
 
 def run():
-    palabra = input('Ingresa una palabra: ')
-    es_palindromo = palindromo(palabra)
-
-    if es_palindromo == True:
-        print(palabra + ', es palindroma')
+    palabra1 = input('Ingresa la primer palabra: ')
+    palabra2 = input('Ingresa la segunda palabra: ')
+    es_palindromo1 = palindromo(palabra1)
+    es_palindromo2 = palindromo(palabra2)
+    
+    if es_palindromo1:
+        print(f'{palabra1}, es palindroma')
     else:
-        print(palabra + ', NO es palindroma')
-
+        print(f'{palabra1}, NO es palindroma')
+    
+    if es_palindromo2:
+        print(f'{palabra2}, es palindroma')
+    else:
+        print(f'{palabra2}, NO es palindroma')
 
 if __name__ == "__main__":
     run()
