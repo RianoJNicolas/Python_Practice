@@ -93,7 +93,18 @@ def palindromo(palabra):
     except ValueError as ve:
         print(ve)
         return False
+    
 
+def anagrama(palabra1, palabra2):
+    palabra1 = palabra1.replace(' ', '')
+    palabra1 = palabra1.lower()
+    palabra2 = palabra2.replace(' ', '')
+    palabra2 = palabra2.lower()
+
+    palabra1 = sorted(palabra1)
+    palabra2 = sorted(palabra2)
+
+    return palabra1 == palabra2
 
 def run():
     palabra1 = input('Ingresa la primer palabra: ')
