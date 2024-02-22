@@ -106,12 +106,14 @@ def anagrama(palabra1, palabra2):
 
     return palabra1 == palabra2
 
+
 def run():
     palabra1 = input('Ingresa la primer palabra: ')
     palabra2 = input('Ingresa la segunda palabra: ')
     es_palindromo1 = palindromo(palabra1)
     es_palindromo2 = palindromo(palabra2)
-    
+    es_anagrama = anagrama(palabra1, palabra2)
+
     if es_palindromo1:
         print(f'{palabra1}, es palindroma')
     else:
@@ -121,6 +123,11 @@ def run():
         print(f'{palabra2}, es palindroma')
     else:
         print(f'{palabra2}, NO es palindroma')
+
+    if es_anagrama:
+        print(f'{palabra1} y {palabra2} son anagramas')
+    else:
+        print(f'{palabra1} y {palabra2} NO son anagramas')
 
 if __name__ == "__main__":
     run()
