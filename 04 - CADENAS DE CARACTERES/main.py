@@ -6,11 +6,11 @@ nombre = "Nico"
 
 # 2. Concatenacion
 sal = saludo + nombre
-print(sal)
+print(f'{sal}\n')
 
 # 3. Operaciones "aritmeticas"
 saludoTotal = saludo*3
-print(saludoTotal)
+print(f'{saludoTotal}\n')
 
 # 4. Operaciones de partcion (Subcadena)
 secuencia = "123456789"
@@ -21,17 +21,17 @@ cuartoCorte = secuencia[::] #Se toma toda la cadena
 print(primerCorte)
 print(segundoCorte)
 print(tercerCorte)
-print(cuartoCorte)
+print(f'{cuartoCorte}\n')
 
 # 5. Acceso a caracteres
 caracter1 = sal[0]
 caracter2 = sal[4]
 print(caracter1)
-print(caracter2)
+print(f'{caracter2}\n')
 
 # 6. Longitud
 longitudString = len(sal)
-print(f'La longitud de la cadena "{sal}" es de {longitudString}') # Interpolacion utilizando f-string y {}
+print(f'La longitud de la cadena "{sal}" es de {longitudString}\n') # Interpolacion utilizando f-string y {}
 
 # 7. Recorrido
 for i in range(longitudString):
@@ -39,9 +39,9 @@ for i in range(longitudString):
 
 # 8. Mayusculas y Minusculas
 salMayus = sal.upper()
-print(salMayus)
+print(f'\n{salMayus}')
 salMinus = sal.lower()
-print(salMinus)
+print(f'{salMinus}\n')
 
 # 9. Reemplazo
 salReplace = sal
@@ -49,7 +49,7 @@ print(f'Palabra Original -> {salReplace}') # Interpolacion utilizando f-string y
 salReplace = salReplace.replace("o", "2") # Reemplaza todas las "o" por un "2"
 print(f'Primer reemplazo de letra "0" por un "2" -> {salReplace}') # Interpolacion utilizando f-string y {}
 salReplace = salReplace.replace("2", "o", 1) # Reemplaza el primer "2" por una "o"
-print(f'Segundo reemplazo, primer "2" por una "o" -> {salReplace}') # Interpolacion utilizando f-string y {}
+print(f'Segundo reemplazo, primer "2" por una "o" -> {salReplace}\n') # Interpolacion utilizando f-string y {}
 
 # 10. Divison o Separacion
 salDiv = sal
@@ -59,21 +59,21 @@ print(f'Separacion = {salDiv}') # Interpolacion utilizando f-string y {}
 salDiv = sal + " Me llamo Johan, soy ingeneriero electronico, me gusta el futbol, la programacion y la f1"
 print(f'Otra separacion de la siguiente cadena -> {salDiv}') # Interpolacion utilizando f-string y {}
 salDiv = salDiv.split(",", 2) # Separa por comas solo las dos primeras comas
-print(f'Separacion = {salDiv}') # Interpolacion utilizando f-string y {}
+print(f'Separacion = {salDiv}\n') # Interpolacion utilizando f-string y {}
 
 # 11. Union
 myStringList = ["uno", "dos", "tres", "cuatro"]
 print(f'Lista -> {myStringList}') # Interpolacion utilizando f-string y {}
 myString = ", ".join(myStringList)
-print(f'Lista unida en un string -> {myString}') # Interpolacion utilizando f-string y {}
+print(f'Lista unida en un string -> {myString}\n') # Interpolacion utilizando f-string y {}
 
 # 12. Verificacion
 letra = "a"
 print(f"String Base -> {sal}")
 if letra in sal:
-    print(f"La letra {letra} si esta en {sal}")
+    print(f"La letra {letra} si esta en {sal}\n")
 else:
-    print(f"La letra {letra} no esta en {sal}")
+    print(f"La letra {letra} no esta en {sal}\n")
 
 
 # DIFICULTAD EXTRA
