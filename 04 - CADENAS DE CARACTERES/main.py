@@ -107,12 +107,27 @@ def anagrama(palabra1, palabra2):
     return palabra1 == palabra2
 
 
+def isograma(palabra):
+    palabra = palabra.replace(' ', '')
+    palabra = palabra.lower()
+    setLetras = set()
+
+    for letra in palabra:
+        if letra in setLetras:
+            print(f'Se repite la letra {letra}')
+            return False
+        else:
+            setLetras.add(letra)
+
+    return True
+
+
 def run():
     palabra1 = input('Ingresa la primer palabra: ')
     palabra2 = input('Ingresa la segunda palabra: ')
+    # Seccion Palindromo
     es_palindromo1 = palindromo(palabra1)
     es_palindromo2 = palindromo(palabra2)
-    es_anagrama = anagrama(palabra1, palabra2)
 
     if es_palindromo1:
         print(f'{palabra1}, es palindroma')
@@ -124,10 +139,27 @@ def run():
     else:
         print(f'{palabra2}, NO es palindroma')
 
+    # Seccion Anagrama
+    es_anagrama = anagrama(palabra1, palabra2)
     if es_anagrama:
         print(f'{palabra1} y {palabra2} son anagramas')
     else:
         print(f'{palabra1} y {palabra2} NO son anagramas')
+
+    # Seccion Isograma
+    es_isograma1 = isograma(palabra1)
+    es_isograma2 = isograma(palabra2)
+
+    if es_isograma1:
+        print(f'{palabra1}, si es isograma')
+    else:
+        print(f'{palabra1}, NO es isograma')
+    
+    if es_isograma2:
+        print(f'{palabra2}, es isograma')
+    else:
+        print(f'{palabra2}, NO es isograma')
+
 
 if __name__ == "__main__":
     run()
