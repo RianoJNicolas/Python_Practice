@@ -18,6 +18,10 @@ print(myIntB)
 
 ## 1.2 Variables por referencia
 
+##      Generalmente en python, los valores que se pueden asignar por referencia son los tipos de datos compuestos
+##      Por ejemplo: Listas, tuplas, diccionarios, etc
+##      
+
 
 
 def fillCoupValue(fill):
