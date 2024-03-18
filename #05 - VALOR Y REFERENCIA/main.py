@@ -17,13 +17,21 @@ print(myIntB)
 
 
 ## 1.2 Variables por referencia
+##      Generalmente en python, los valores que se pueden asignar por referencia son los tipos de datos que no son primiticos
+##      Por ejemplo: Listas, tuplas, diccionarios, set, etc
+##      Se traduce a que estos valores por referencia heredan la posición de memoria, parece como si fueran los punteros de C++
 
-##      Generalmente en python, los valores que se pueden asignar por referencia son los tipos de datos compuestos
-##      Por ejemplo: Listas, tuplas, diccionarios, etc
-##      
+my_setA = {10, 20}
+#my_setB = {30, 40}
+my_setB = my_setA
+my_setB.add(30)
+print(my_setA)
+print(my_setB)
 
 
+# 2. Ejemplos de funciones por valor y por referencia
 
+## 2.1 Funciones con datos por valor
 def fillCoupValue(fill):
     fill = 99
     initialLevel = 0
