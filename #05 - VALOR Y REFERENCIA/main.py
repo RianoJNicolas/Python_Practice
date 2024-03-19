@@ -32,10 +32,14 @@ print(my_setB)
 # 2. Ejemplos de funciones por valor y por referencia
 
 ## 2.1 Funciones con datos por valor
+my_fill = 50
 def fillCoupValue(fill):
     fill = 99
-    initialLevel = 0
-    return initialLevel + fill
+    print(fill)
+    return fill
+
+fillCoupValue(my_fill)
+print(my_fill)
 
 # Asignacion de variables por referencia
 def fillCoup(fill):
