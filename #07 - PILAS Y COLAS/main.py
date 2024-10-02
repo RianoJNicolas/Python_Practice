@@ -25,6 +25,7 @@ def stackMethod(stack, action, element=None):
     elif action == "peek":
         return stack[len(stack)-1]
 
+print("Prueba del metodo stack-LIFO")
 myStack = [1,2,3,4,5]
 print(stackMethod(myStack, "push", 6))
 print(stackMethod(myStack, "pop"))
@@ -50,6 +51,7 @@ def queueMethod(queue, action, element=None):
     elif action == "peek":
         return queue[0]
 
+print("Prueba del metodo queue-FIFO")
 myQueue = deque([1,2,3,4,5])
 print(queueMethod(myQueue, "enqueue", 6))
 print(queueMethod(myQueue, "dequeue"))
