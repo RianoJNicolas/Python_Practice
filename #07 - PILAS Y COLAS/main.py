@@ -2,6 +2,8 @@
 # Dev: rianojnicolas              #
 ###################################
 
+from collections import deque
+
 # EJERCICIO:
 
 ## Listas como Pilas - LIFO (last in first out)
@@ -30,3 +32,25 @@ print(stackMethod(myStack, "peek"))
 
 ## Listas como Colas - FIFO (first in first out)
 
+def queueMethod(queue, action, element=None):
+    """
+    Inputs:
+        queue: lista de elementos
+        action: accion a realizar "enqueue"/"dequeue"/"queue"
+        element: elemento a insertar/eliminar/devolver primer elemento
+    Outputs:    
+        queue: lista de elementos
+    """
+    if action == "enqueue":
+        queue.append(element)
+        return queue
+    elif action == "dequeue":
+        queue.popleft()
+        return queue
+    elif action == "peek":
+        return queue[0]
+
+myQueue = deque([1,2,3,4,5])
+print(queueMethod(myQueue, "enqueue", 6))
+print(queueMethod(myQueue, "dequeue"))
+print(queueMethod(myQueue, "peek"))
