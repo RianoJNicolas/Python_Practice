@@ -67,20 +67,23 @@ def webNavigation(url,accion):
         url: url a navegar
         accion: accion a realizar "adelante"/"atras"/"salir"
     outputs:
-        url: url a navegar
+        print(url)
     """
     stack = []
 
     while True:
-        
-        accion = input("Ingresa una accion: ")
+
+        accion = input("Ingresa una accion (adelante/atras/salir): ")
 
         if accion == "adelante":
-            stackMethod(stack, "push", url)
+            url = input("Ingresa una url: ")
+            stack = stackMethod(stack, "push", url)
         elif accion == "atras":
-            stackMethod(stack, "pop")
+            stack = stackMethod(stack, "pop")
         elif accion == "salir":
+            print("Saliendo del navegador")
             break
         else:
             print("Accion incorrecta")
-            break
+            print("Opciones: adelante/atras/salir")
+            pass
