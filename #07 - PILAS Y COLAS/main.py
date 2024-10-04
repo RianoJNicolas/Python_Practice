@@ -56,3 +56,31 @@ myQueue = deque([1,2,3,4,5])
 print(queueMethod(myQueue, "enqueue", 6))
 print(queueMethod(myQueue, "dequeue"))
 print(queueMethod(myQueue, "peek"))
+
+
+# DIFICULTAD EXTRA
+
+# Web - LIFO
+def webNavigation(url,accion):
+    """
+    inputs:
+        url: url a navegar
+        accion: accion a realizar "adelante"/"atras"/"salir"
+    outputs:
+        url: url a navegar
+    """
+    stack = []
+
+    while True:
+        
+        accion = input("Ingresa una accion: ")
+
+        if accion == "adelante":
+            stackMethod(stack, "push", url)
+        elif accion == "atras":
+            stackMethod(stack, "pop")
+        elif accion == "salir":
+            break
+        else:
+            print("Accion incorrecta")
+            break
