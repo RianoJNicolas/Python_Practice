@@ -61,11 +61,13 @@ print(queueMethod(myQueue, "peek"))
 # DIFICULTAD EXTRA
 
 # Web - LIFO
-def webNavigation(url,accion):
+def webNavigation():
     """
-    inputs:
-        url: url a navegar
-        accion: accion a realizar "adelante"/"atras"/"salir"
+    Funcion que simula el navegador web 
+    y realiza las acciones de ingreso de url, 
+    adelante, atras y salida
+    
+    inputs: -
     outputs:
         print(url)
     """
@@ -87,3 +89,14 @@ def webNavigation(url,accion):
             print("Accion incorrecta")
             print("Opciones: adelante/atras/salir")
             pass
+        
+        if len(stack) == 0:
+            print("Estas en la pagina principal")
+            pass
+        elif len(stack) > 0:
+            print(stackMethod(stack, "peek"))
+        
+
+
+
+webNavigation()
