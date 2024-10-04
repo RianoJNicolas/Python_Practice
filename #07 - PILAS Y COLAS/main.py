@@ -81,7 +81,10 @@ def webNavigation():
             url = input("Ingresa una url: ")
             stack = stackMethod(stack, "push", url)
         elif accion == "atras":
-            stack = stackMethod(stack, "pop")
+            if len(stack) > 0:
+                stack = stackMethod(stack, "pop")
+            else:
+                pass
         elif accion == "salir":
             print("Saliendo del navegador")
             break
