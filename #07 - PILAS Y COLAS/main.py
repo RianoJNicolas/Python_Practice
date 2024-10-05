@@ -98,8 +98,45 @@ def webNavigation():
             pass
         elif len(stack) > 0:
             print(stackMethod(stack, "peek"))
-        
-
 
 
 webNavigation()
+
+
+# Impresora Compartida - FIFO
+def printerShared():
+    """
+    Funcion que simula la impresora compartida
+    y realiza las acciones de ingreso de documento, 
+    impresion y salida
+    
+    inputs: -
+    outputs:
+        print(document)
+    """
+    queue = deque()
+
+    while True:
+
+        accion = input("Ingresa una accion (agregar/imprimir/salir): ")
+
+        if accion == "agregar":
+            document = input("Ingresa un documento: ")
+            queue = queueMethod(queue, "enqueue", document)
+        elif accion == "imprimir":
+            if len(queue) > 0:
+                print("Imprimiendo documento - " + queueMethod(queue, "peek"))
+                document = queueMethod(queue, "dequeue")
+            else:
+                print("No hay documentos en la impresora")
+                pass
+        elif accion == "salir":
+            print("Saliendo de la impresora")
+            break
+        else:
+            print("Accion incorrecta")
+            print("Opciones: imprimir/salir")
+            pass
+
+
+printerShared()
