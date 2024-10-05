@@ -71,15 +71,17 @@ def webNavigation():
     outputs:
         print(url)
     """
-    stack = []
 
-    while True:
-        print("""
+    print("""
 
             Hola, soy el navegador web y
             Estas en la pagina principal
             
         """)
+    stack = []
+
+    while True:
+        
         accion = input("Ingresa una accion (adelante/atras/salir): ")
 
         if accion == "adelante":
@@ -119,6 +121,13 @@ def printerShared():
     outputs:
         print(document)
     """
+
+    print("""
+
+            Hola, soy la impresora compartida
+            
+        """)
+
     queue = deque()
 
     while True:
