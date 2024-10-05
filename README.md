@@ -17,3 +17,4 @@ Cada uno de los ejercicios estan organizados por directorios.
 - #05 - VALOR Y REFERENCIA
 - #06 - RECURSIVIDAD
 - #07 - PILAS Y COLAS
+- #08 - CLASES
