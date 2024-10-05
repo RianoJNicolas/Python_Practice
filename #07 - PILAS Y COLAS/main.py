@@ -74,7 +74,12 @@ def webNavigation():
     stack = []
 
     while True:
+        print("""
 
+            Hola, soy el navegador web y
+            Estas en la pagina principal
+            
+        """)
         accion = input("Ingresa una accion (adelante/atras/salir): ")
 
         if accion == "adelante":
